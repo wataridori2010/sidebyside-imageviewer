@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Comparison Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+<div class="toolbar">
+    <label class="switch">
+        <input type="checkbox" id="syncCheckbox" checked>
+        <span class="slider round"></span>
+        同期
+    </label>
+    <button id="resetButton" class="button">リセット</button>
+    <button id="screenshotButton" class="button">スクリーンショット</button>
+</div>
+
+<div class="selection-container">
+    <label>表示する画像の枚数を選択してください：</label>
+    <button id="twoImagesButton" class="button">2枚</button>
+    <button id="threeImagesButton" class="button">3枚</button>
+    <button id="fourImagesButton" class="button">4枚</button>
+</div>
+
+<div class="overlay-option">
+    <label><input type="checkbox" id="overlayCheckbox"> 右の画像を左に重ねる</label>
+</div>
+
+<div class="container" id="screenshotArea">
+    <!-- 画像表示領域はJavaScriptで動的に追加されます -->
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
