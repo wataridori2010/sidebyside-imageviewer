@@ -1,43 +1,42 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Comparison Viewer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Easily compare images. Drag and drop images to upload, overlay them, and take screenshots.">
+    <title>Side by Side Image Viewer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8828492014306289"
-     crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Side-by-Side Image Viewer</h1>
-<div class="toolbar">
-    <!--
-    <label class="switch">
-        <input type="checkbox" id="syncCheckbox" checked>
-        <span class="slider round"></span>
-        同期
-    </label>
-    -->
-<div class="selection-container">
-    <label>表示する画像の枚数を選択してください：</label>
-    <button id="twoImagesButton" class="button">2枚</button>
-    <button id="threeImagesButton" class="button">3枚</button>
-    <button id="fourImagesButton" class="button">4枚</button>
-    <button id="resetButton" class="button">リセット</button>    
-</div>    
-<div class="selection-container">    
-    <button id="screenshotButton" class="button">スクリーンショット</button>
-</div>
-</div>
-<div class="overlay-option">
-    <label><input type="checkbox" id="overlayCheckbox"> 右の画像を左に重ねる</label>
-</div>    
+    <h1>Side by Side Image Viewer</h1>
+    <div class="toolbar">
+        <div class="selection-container">
+            <label>Number of images:</label>
+            <button id="twoImagesButton" class="button">2</button>
+            <button id="threeImagesButton" class="button">3</button>
+            <button id="fourImagesButton" class="button">4</button>
+        </div>
+        <div class="selection-container">
+            <label>Image positions:</label>            
+            <button id="resetButton" class="button">Initialize</button>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="syncCheckbox">
+                <span>Sync Images</span>
+            </label>
+            <label class="custom-checkbox">
+                <input type="checkbox" id="mirrorCheckbox">
+                <span>Mirror Right Image</span>
+            </label>
+        </div>
 
-<div class="container" id="screenshotArea">
-    <!-- 画像表示領域はJavaScriptで動的に追加されます -->
-</div>
-
-<script src="script.js"></script>
-
+        <div class="selection-container">
+            <button id="screenshotButton" class="button">Screenshot</button>
+            <a href="disclaimer.html" class="button small-button" target="_blank">Disclaimer</a>            
+        </div>
+    </div>
+    <div class="container" id="screenshotArea"></div>
+    <script src="script.js"></script>
 </body>
 </html>

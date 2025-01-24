@@ -1,3 +1,4 @@
+/* General body styling */
 body {
     margin: 0;
     padding: 0;
@@ -6,14 +7,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #c0c0c0;
-    font-family: Arial, sans-serif;
+    background-color: #7e7e7e;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
 }
 
-h1{
-    color: #222;
-}
-
+/* Toolbar styling */
 .toolbar {
     display: flex;
     justify-content: space-between;
@@ -21,36 +20,42 @@ h1{
     max-width: 4000px;
     margin-bottom: 10px;
     padding: 10px;
-    background-color: #18405a;
+    background-color: #282c24;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: #ffffff;
 }
 
 .selection-container {
-    margin-bottom: 10px;
-}
-
-.overlay-option {
-    margin-bottom: 10px;
-    display: none; /* 初期状態では非表示 */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
 }
 
 .button {
     padding: 10px 20px;
-    background-color: #f1fafb;
-    color: #282c34;
+    background-color: #e0f7fa;
+    color: #004d40;
     border: none;
     border-radius: 5px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.1s ease;
+    transition: background-color 0.2s ease;
 }
 
 .button:hover {
-    background-color: #b1b1b1;
+    background-color: #b2ebf2;
 }
 
+.button.selected {
+    background-color: #26a69a;
+    color: white;
+    border: 2px solid #00796b;
+}
+
+/* Container styling */
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -58,10 +63,10 @@ h1{
     max-width: 4000px;
     height: 80vh;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 0px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+    background-color: #000000;
 }
 
 .image-wrapper {
@@ -72,19 +77,18 @@ h1{
     justify-content: center;
 }
 
-
 .image-wrapper.half {
-    flex: 1 1 50%; /* 2分割用: 左右分割 */
+    flex: 1 1 50%;
     height: 100%;
 }
 
 .image-wrapper.third {
-    flex: 1 1 33.33%; /* 3分割用: 左、中、右 */
+    flex: 1 1 33.33%;
     height: 100%;
 }
 
 .image-wrapper.quarter {
-    flex: 1 1 50%; /* 4分割用: 左上、右上、左下、右下 */
+    flex: 1 1 50%;
     height: 50%;
 }
 
@@ -93,7 +97,7 @@ h1{
     max-width: 100%;
     max-height: 100%;
     cursor: move;
-    border-radius: 4px;
+    border-radius: 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -105,59 +109,65 @@ h1{
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 1.2rem;
-    color: #777;
-    background-color: rgba(240, 240, 240, 0.8);
-    border-radius: 4px;
-    transition: background-color 0.1s ease;
+    font-size: 1.5rem; /* フォントサイズを少し大きく */
+    color: #ffffff; /* 文字色を白にしてコントラストを強調 */
+    background-color: rgba(100, 100, 100, 0.9); /* 背景色を少し明るく調整 */
+    border: 2px solid #cccccc; /* ボーダーを追加 */
+    border-radius: 0px;
+    transition: background-color 0.2s ease, border-color 0.2s ease; /* ホバー時の変化を滑らかに */
+    cursor: pointer;
 }
 
 .dropzone:hover {
-    background-color: rgba(220, 220, 220, 0.9);
+    background-color: rgba(150, 150, 150, 0.9); /* ホバー時に背景色を明るく */
+    color: #f3f3f3; /* ホバー時の文字色を調整 */
+    border-color: #a7a7a7; /* ホバー時のボーダー色を濃く */
 }
 
-/* Toggle switch style */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+/* Disclaimer link styling */
+.toolbar a.small-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: #444;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background-color 0.2s;
 }
 
-.switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
+.toolbar a.small-button:hover {
+    background-color: #666;
 }
 
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .1s;
-    border-radius: 34px;
+/* Main content styling */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .1s;
-    border-radius: 50%;
+section {
+    margin-bottom: 20px;
 }
 
-input:checked + .slider {
-    background-color: #414a4b;
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-input:checked + .slider:before {
-    transform: translateX(26px);
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+footer p a {
+    color: #00796b;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
 }
