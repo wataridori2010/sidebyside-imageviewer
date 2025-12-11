@@ -12,6 +12,32 @@ body {
     font-style: italic;
 }
 
+/* Header styling */
+.ad-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    max-width: 4000px;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.title-container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase; /* Optional: make it look more like a title */
+    text-align: center;
+}
+
+.ad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Toolbar styling */
 .toolbar {
     display: flex;
